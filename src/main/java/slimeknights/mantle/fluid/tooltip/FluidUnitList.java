@@ -7,6 +7,7 @@ import net.minecraft.world.level.material.Fluid;
 import slimeknights.mantle.util.RegistryHelper;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,5 +38,18 @@ public class FluidUnitList {
       }
     }
     return amount;
+  }
+
+  /**
+   * Gets int multiples of each FluidUnit
+   */
+  public List<Integer> getMultiples(int amount) {
+    List<Integer> multiples = new ArrayList<>(3);
+    if (units != null) {
+      for (FluidUnit unit : units) {
+        amount = unit.getMultiple(multiples, amount);
+      }
+    }
+    return multiples;
   }
 }

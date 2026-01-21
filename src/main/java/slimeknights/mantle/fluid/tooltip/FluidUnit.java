@@ -27,4 +27,17 @@ public class FluidUnit {
     }
     return amount % needed;
   }
+
+  /**
+   * Gets the multiple of the FluidUnit
+   * @param multiples FluidUnit multiple
+   * @param amount amount of fluid
+   *
+   * @return remainder
+   */
+  public int getMultiple(List<Integer> multiples, int amount) {
+    multiples.add(amount / needed);
+    return amount % needed;
+  }
+
 }
